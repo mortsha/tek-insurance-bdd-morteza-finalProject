@@ -16,7 +16,7 @@ public class HooksSteps extends SeleniumUtility {
     public void afterEachScenario(Scenario scenario) {
         if (scenario.isFailed()) {
             byte[] screenshot = getScreenShot();
-            scenario.attach(screenshot, "image/ping", "failed_scenario");
+            scenario.attach(screenshot, "image/png", "failed_scenario");
         }
 
         quitBrowser();

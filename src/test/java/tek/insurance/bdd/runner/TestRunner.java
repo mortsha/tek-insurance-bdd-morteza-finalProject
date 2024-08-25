@@ -6,10 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        tags = "",
+        tags = "OpenBrowser",
         features = "classpath:features",
         glue = "tek.insurance.bdd.steps",
         dryRun = true,
+
         monochrome = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         plugin = {
