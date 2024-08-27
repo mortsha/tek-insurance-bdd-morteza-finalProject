@@ -24,10 +24,6 @@ public class CreateNewAccountSteps extends SeleniumUtility {
     public static String usernameCreatedAccount;
     public static String fullNameCreatedAccount;
 
-    @When("user click on {string} link")
-    public void userClickOnLink(String string) {
-        clickOnElement(HomePage.CREATE_PRIMARY_ACCOUNT_LINK);
-    }
 
 
     @When("user fill the create new account form")

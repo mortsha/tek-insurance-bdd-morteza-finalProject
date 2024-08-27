@@ -4,6 +4,9 @@ public class JavaUtility {
 
     public static void main(String[] args) {
 
+    String text = "User WRONG_USERNAME not found";
+    String replace = text.replace("WRONG_USERNAME","Mori");
+        System.out.println(replace);
     }
 
     public static String getFirstCharacterCapital(String value) {

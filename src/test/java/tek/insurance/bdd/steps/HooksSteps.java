@@ -20,6 +20,7 @@ public class HooksSteps extends SeleniumUtility {
             scenario.attach(screenshot, "image/png", "failed_scenario");
         }
         quitBrowser();
+        recordData.clear();
     }
 
 }

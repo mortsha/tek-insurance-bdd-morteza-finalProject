@@ -5,9 +5,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import tek.insurance.bdd.pages.HomePage;
 import tek.insurance.bdd.utility.SeleniumUtility;
 
 public class CommonSteps extends SeleniumUtility {
+
+    @When("user click on {string} link")
+    public void userClickOnLink(String expectedLinkText) {
+        clickOnElement(By.linkText(expectedLinkText));
+    }
 
     @Then("validate {string} title")
     public void validateTitle(String expectedHeader) {
@@ -36,6 +42,7 @@ public class CommonSteps extends SeleniumUtility {
 
     @When("user enter {string} on field {string}")
     public void userEnterOnField(String value, String field) {
+        recordData.put(field,value);
         if(value.equalsIgnoreCase("username")){
             sendText(By.name(field.toLowerCase()),CreateNewAccountSteps.usernameCreatedAccount);
         }else {

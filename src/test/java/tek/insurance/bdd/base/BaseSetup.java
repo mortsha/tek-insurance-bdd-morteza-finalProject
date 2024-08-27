@@ -13,6 +13,8 @@ import tek.insurance.bdd.browsers.FirefoxBrowser;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 public class BaseSetup {
@@ -20,6 +22,7 @@ public class BaseSetup {
     private final Properties properties;
     protected static final long WAIT_TIME_IN_SECONDS = 20;
     private static final Logger LOGGER = LogManager.getLogger(BaseSetup.class);
+    public static Map<String,String> recordData = new HashMap<>();
 
     public static WebDriver getDriver() {
         return driver;
