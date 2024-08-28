@@ -5,7 +5,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        tags = "@UserStory5",
+        tags = "@PlansUS1",
         features = "classpath:features",
         glue = "tek.insurance.bdd.steps",
         dryRun = false,

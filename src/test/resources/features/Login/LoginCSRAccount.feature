@@ -10,15 +10,14 @@ Feature: Login feature with positive and negative test
     When  user enter "supervisor" on field "Username"
     And  user enter "tek_supervisor" on field "Password"
     Then user click on "Sign In" button
-    Then validate "Customer Service Portal" title
+    Then validate "Customer Service Portal" account title
 
   @Login_US2
   Scenario: Success Login to Primary Account
     When  user enter "Steve5670" on field "Username"
     And  user enter "Anything@123" on field "Password"
     Then user click on "Sign In" button
-    Then validate "Primary Account Portal" title
-
+    Then validate "Primary Account Portal" account title
 
   @Login_US3
   Scenario Outline:  Negative login with invalid credentials

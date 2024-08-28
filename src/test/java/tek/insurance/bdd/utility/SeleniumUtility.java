@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import tek.insurance.bdd.base.BaseSetup;
 
 import java.time.Duration;
+import java.util.List;
 
 public class SeleniumUtility extends BaseSetup {
     private static final Logger LOGGER = LogManager.getLogger(SeleniumUtility.class);
@@ -82,5 +83,8 @@ public class SeleniumUtility extends BaseSetup {
         WebElement dropdownElement = getDriver().findElement(locator);
         Select select = new Select(dropdownElement);
         select.selectByVisibleText(text);
+    }
+    public List<WebElement> getListOfElements(By locator){
+        return getDriver().findElements(locator);
     }
 }

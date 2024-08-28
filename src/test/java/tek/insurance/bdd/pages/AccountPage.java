@@ -4,6 +4,6 @@ import org.openqa.selenium.By;
 
 public class AccountPage {
 
-    public static final By HEADER_TITLE = By.xpath("//button[contains(@class,'chakra-button')]//..//h2");
+    public static final By ACCOUNT_HEADER_TITLE = By.xpath("//div[contains(@class,'header')]//a//following-sibling::h2");
 
 }

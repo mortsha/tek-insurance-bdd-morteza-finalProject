@@ -6,10 +6,7 @@ import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
-import tek.insurance.bdd.pages.CreateNewAccountPage;
-import tek.insurance.bdd.pages.HomePage;
-import tek.insurance.bdd.pages.ProfilePage;
-import tek.insurance.bdd.pages.SignUpPage;
+import tek.insurance.bdd.pages.*;
 import tek.insurance.bdd.utility.DataGenerator;
 import tek.insurance.bdd.utility.JavaUtility;
 import tek.insurance.bdd.utility.SeleniumUtility;
@@ -19,11 +16,9 @@ import java.util.Map;
 
 public class CreateNewAccountSteps extends SeleniumUtility {
 
-    private static final Logger LOGGER = LogManager.getLogger(CreateNewAccountSteps.class);
     private String randomEmailGenerated;
     public static String usernameCreatedAccount;
     public static String fullNameCreatedAccount;
-
 
 
     @When("user fill the create new account form")
@@ -84,6 +79,11 @@ public class CreateNewAccountSteps extends SeleniumUtility {
         Thread.sleep(seconds * 1000);
     }
 
+    @Then("validate sign in  {string} title")
+    public void validateSignInTitle(String expectedSignInTitle) {
+        String actualSignInTitle = getElementText(SignInPage.SIGN_UP_TITLE);
+        Assert.assertEquals("Sign in title should match", expectedSignInTitle, actualSignInTitle);
+    }
 
     @When("validate full name displayed at Profile Section")
     public void validateFullNameDisplayedAtProfileSection() {

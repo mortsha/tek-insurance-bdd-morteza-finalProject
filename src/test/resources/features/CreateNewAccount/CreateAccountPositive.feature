@@ -32,11 +32,12 @@ Feature: Create new Account with Valid data
     And  user enter "Anything@123" on field "Confirm"
     Then user click on "Submit" button
     When user wait 3 seconds to redirect to sign in page
+    Then validate sign in  "Sign in to your Account" title
     And user enter "username" on field "Username"
     And  user enter "Anything@123" on field "Password"
     Then user click on "Sign In" button
-    Then validate "Primary Account Portal" title
+    Then validate "Primary Account Portal" account title
     When user click on "Profile" button
-    And validate full name displayed at Profile Section
+    Then validate full name displayed at Profile Section
 
 
