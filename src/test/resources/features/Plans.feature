@@ -1,5 +1,5 @@
-@Regression @Plan
-Feature: Customer Service Portal Page and validation
+@Smoke @Regression @Plan
+Feature: Customer Service Portal Account - Plans and validation
 
   Background: Login with CSR credentials
     When user click on "Login" link
@@ -8,8 +8,14 @@ Feature: Customer Service Portal Page and validation
     And  user enter "tek_supervisor" on field "Password"
     Then user click on "Sign In" button
     Then validate "Customer Service Portal" account title
+    When user click on "Plans" link
 
 @PlansUS1
   Scenario: Login with CSR Account and validate the data
-    When user click on "Plans" link
     Then validate 4 row of data is present
+
+  @PlansUS2
+  Scenario: Validate Created and Expire date on plans page
+    Then validate Date Created is todays date in EST Time Zone
+    Then validate Date Expire is a day after EST Time Zone
+

@@ -10,4 +10,6 @@ public class ProfilePage {
     public static final By USER_NAME = By.xpath("//p[text()='USERNAME']//following-sibling::p");
     public static final By AUTHORITIES = By.xpath("//p[text()='AUTHORITIES']//following-sibling::ul");
 
+
+
 }

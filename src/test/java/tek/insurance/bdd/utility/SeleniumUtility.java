@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 import tek.insurance.bdd.base.BaseSetup;
 
 import java.time.Duration;
@@ -84,7 +85,16 @@ public class SeleniumUtility extends BaseSetup {
         Select select = new Select(dropdownElement);
         select.selectByVisibleText(text);
     }
+    public void selectDropDownByValue(By locator,String value){
+        WebElement dropdownElement = getDriver().findElement(locator);
+        Select select = new Select(dropdownElement);
+        select.selectByValue(value);
+    }
     public List<WebElement> getListOfElements(By locator){
         return getDriver().findElements(locator);
+    }
+
+    public SoftAssert getSoftAssert(){
+        return new SoftAssert();
     }
 }
