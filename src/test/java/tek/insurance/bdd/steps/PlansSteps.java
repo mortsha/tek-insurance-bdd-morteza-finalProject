@@ -7,10 +7,8 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 import tek.insurance.bdd.pages.PlansPage;
-import tek.insurance.bdd.pages.ProfilePage;
 import tek.insurance.bdd.utility.JavaUtility;
 import tek.insurance.bdd.utility.SeleniumUtility;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.List;
@@ -44,10 +42,6 @@ public class PlansSteps extends SeleniumUtility {
 
         }
         softAssert.assertAll();
-//        String createdDatePlans = getElementText(PlansPage.MOTOR_DATE_CREATED);
-//        LocalDate expectedTodayDate = LocalDate.now(JavaUtility.getESTZoneId());
-//        LocalDate actualDateCreated = LocalDate.parse(createdDatePlans, JavaUtility.dateTimeFormatter());
-//        Assert.assertEquals("Created Date should match ", expectedTodayDate, actualDateCreated);
     }
 
     @Then("validate Date Expire is a day after EST Time Zone")
@@ -67,11 +61,6 @@ public class PlansSteps extends SeleniumUtility {
 
         }
         softAssert.assertAll();
-
-//        String dateExpirePlans = getElementText(PlansPage.MOTOR_DATE_EXPIRE);
-//        LocalDate expectedExpireDate = LocalDate.now(JavaUtility.getESTZoneId()).plusDays(1);
-//        LocalDate actualDateExpire = LocalDate.parse(dateExpirePlans, JavaUtility.dateTimeFormatter());
-//        Assert.assertEquals("Created Date should match ", expectedExpireDate, actualDateExpire);
 
 
     }

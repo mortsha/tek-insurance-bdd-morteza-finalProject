@@ -9,9 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.asserts.SoftAssert;
 import tek.insurance.bdd.base.BaseSetup;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -26,9 +24,10 @@ public class SeleniumUtility extends BaseSetup {
         return getWait().until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    private WebElement waitToBeClickable(WebElement element) {
-        return getWait().until(ExpectedConditions.elementToBeClickable(element));
+    private List<WebElement> waitToBeClickableList(By locator) {
+        return getWait().until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }
+
 
     private WebElement waitTillVisible(WebElement element) {
         return getWait().until(ExpectedConditions.visibilityOf(element));
@@ -43,23 +42,18 @@ public class SeleniumUtility extends BaseSetup {
         return screenshot.getScreenshotAs(OutputType.BYTES);
     }
 
-    public void clickOnElement(WebElement element) {
-        waitToBeClickable(element).click();
-        LOGGER.info("Clicking on Element {} ", element);
-    }
-
     public void clickOnElement(By locator) {
         waitToBeClickable(locator).click();
         LOGGER.info("Clicking on Locator {} ", locator);
     }
 
     public boolean isDisplayed(WebElement element) {
-        LOGGER.info("Element displayed {} ", element);
+        LOGGER.info("Element displayed {} ", getElementText(element));
         return waitTillVisible(element).isDisplayed();
     }
 
     public WebElement getWebElement(By locator) {
-        LOGGER.info("getting title {} ", locator);
+        LOGGER.info("getting title {} ", getElementText(locator));
         return getDriver().findElement(locator);
 
     }
@@ -68,6 +62,7 @@ public class SeleniumUtility extends BaseSetup {
         LOGGER.info("Getting Element text {} ", element);
         return waitTillVisible(element).getText();
     }
+
     public String getElementText(By locator) {
         LOGGER.info("Getting Element text {} ", locator);
         return waitTillVisible(locator).getText();
@@ -81,20 +76,23 @@ public class SeleniumUtility extends BaseSetup {
     }
 
     public void selectDropdownByText(By locator, String text) {
-        WebElement dropdownElement = getDriver().findElement(locator);
+        LOGGER.info("Select dropdown by visible text {} locator{}", text, locator);
+        WebElement dropdownElement = waitTillVisible(locator);
         Select select = new Select(dropdownElement);
         select.selectByVisibleText(text);
     }
-    public void selectDropDownByValue(By locator,String value){
-        WebElement dropdownElement = getDriver().findElement(locator);
+
+    public void selectDropDownByValue(By locator, String value) {
+        LOGGER.info("Select dropdown by value {} locator{}", value, locator);
+        WebElement dropdownElement = waitTillVisible(locator);
         Select select = new Select(dropdownElement);
         select.selectByValue(value);
     }
-    public List<WebElement> getListOfElements(By locator){
-        return getDriver().findElements(locator);
+
+    public List<WebElement> getListOfElements(By locator) {
+        LOGGER.info("Getting of all elements {}", locator);
+        return waitToBeClickableList(locator);
     }
 
-    public SoftAssert getSoftAssert(){
-        return new SoftAssert();
-    }
+
 }

@@ -3,8 +3,6 @@ package tek.insurance.bdd.steps;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import tek.insurance.bdd.pages.*;
 import tek.insurance.bdd.utility.DataGenerator;

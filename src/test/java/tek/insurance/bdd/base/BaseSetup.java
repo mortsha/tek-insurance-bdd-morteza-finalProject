@@ -3,13 +3,10 @@ package tek.insurance.bdd.base;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import tek.insurance.bdd.browsers.BaseBrowser;
 import tek.insurance.bdd.browsers.ChromeBrowser;
 import tek.insurance.bdd.browsers.EdgeBrowser;
 import tek.insurance.bdd.browsers.FirefoxBrowser;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -31,6 +28,7 @@ public class BaseSetup {
     public BaseSetup() {
 
         try {
+
             String configFilePath = System.getProperty("user.dir") + "/src/test/resources/configs/dev-config.properties";
             LOGGER.debug("Reading config file " + configFilePath);
             FileInputStream inputStream = new FileInputStream(configFilePath);

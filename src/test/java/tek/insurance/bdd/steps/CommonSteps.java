@@ -1,11 +1,9 @@
 package tek.insurance.bdd.steps;
 
-
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import tek.insurance.bdd.pages.HomePage;
 import tek.insurance.bdd.utility.SeleniumUtility;
 
 public class CommonSteps extends SeleniumUtility {
@@ -24,7 +22,8 @@ public class CommonSteps extends SeleniumUtility {
 
     @Then("the {string} link is displayed")
     public void theLinkIsDisplayed(String linkText) {
-        isDisplayed(getWebElement(By.linkText(linkText)));
+        Assert.assertTrue(isDisplayed(getWebElement(By.linkText(linkText))));
+
     }
 
 
