@@ -7,6 +7,7 @@ import tek.insurance.bdd.browsers.BaseBrowser;
 import tek.insurance.bdd.browsers.ChromeBrowser;
 import tek.insurance.bdd.browsers.EdgeBrowser;
 import tek.insurance.bdd.browsers.FirefoxBrowser;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -19,7 +20,7 @@ public class BaseSetup {
     private final Properties properties;
     protected static final long WAIT_TIME_IN_SECONDS = 20;
     private static final Logger LOGGER = LogManager.getLogger(BaseSetup.class);
-    public static Map<String,String> recordData = new HashMap<>();
+    public static Map<String, String> recordData = new HashMap<>();
 
     public static WebDriver getDriver() {
         return driver;
@@ -35,7 +36,7 @@ public class BaseSetup {
             properties = new Properties();
             properties.load(inputStream);
         } catch (IOException e) {
-            LOGGER.debug("Error reading config file " + e);
+            LOGGER.debug("Error reading config file: " , e);
             throw new RuntimeException("Something wrong with config file, " + e);
         }
 
@@ -59,7 +60,7 @@ public class BaseSetup {
 
         driver = browser.openBrowser(isHeadless);
         String url = properties.getProperty("ui.url");
-        LOGGER.debug("Opening url " + url);
+        LOGGER.debug("Opening url {} ", url);
         driver.get(url);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WAIT_TIME_IN_SECONDS));
