@@ -16,6 +16,6 @@ Feature: Customer Service Portal Account - Plans and validation
 
   @PlansUS2
   Scenario: Validate Created and Expire date on plans page
-    Then validate Date Created is todays date in EST Time Zone
+    Then validate Date Created is today date in EST Time Zone
     Then validate Date Expire is a day after EST Time Zone
 

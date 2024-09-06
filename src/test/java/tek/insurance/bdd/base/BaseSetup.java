@@ -31,13 +31,13 @@ public class BaseSetup {
         try {
 
             String configFilePath = System.getProperty("user.dir") + "/src/test/resources/configs/dev-config.properties";
-            LOGGER.debug("Reading config file " + configFilePath);
+            LOGGER.debug("Reading config file {}" , configFilePath);
             FileInputStream inputStream = new FileInputStream(configFilePath);
             properties = new Properties();
             properties.load(inputStream);
         } catch (IOException e) {
             LOGGER.debug("Error reading config file: " , e);
-            throw new RuntimeException("Something wrong with config file, " + e);
+            throw new RuntimeException("Something wrong with config file, " , e);
         }
 
 

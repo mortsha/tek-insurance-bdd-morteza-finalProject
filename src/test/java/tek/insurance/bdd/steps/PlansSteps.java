@@ -25,8 +25,8 @@ public class PlansSteps extends SeleniumUtility {
     }
 
 
-    @Then("validate Date Created is todays date in EST Time Zone")
-    public void validateDateCreatedIsTodaysDateInESTTimeZone() {
+    @Then("validate Date Created is today date in EST Time Zone")
+    public void validateDateCreatedIsTodayDateInESTTimeZone() {
         List<WebElement> datesCreatedList = getListOfElements(PlansPage.DATE_CREATED_ELEMENTS);
         SoftAssert softAssert = new SoftAssert();
         LocalDate expectedTodayDate = LocalDate.now(JavaUtility.getESTZoneId());
@@ -36,7 +36,7 @@ public class PlansSteps extends SeleniumUtility {
                 softAssert.assertEquals(actualDateCreated, expectedTodayDate, "Created Date should match ");
 
             } catch (DateTimeParseException e) {
-                LOGGER.debug("Error parsing date: " + e.getMessage());
+                LOGGER.debug("Error parsing date {} ", e.getMessage());
                 softAssert.fail("Date parsing failed for element: " + getElementText(dateCreated) + " - " + e.getMessage());
             }
 
@@ -55,7 +55,7 @@ public class PlansSteps extends SeleniumUtility {
                 softAssert.assertEquals(actualDateExpire, expectedExpireDate, "Created Date should match ");
 
             } catch (DateTimeParseException e) {
-                LOGGER.debug("Error parsing date: " + e.getMessage());
+                LOGGER.debug("Error parsing date {} " , e.getMessage());
                 softAssert.fail("Date parsing failed for element: " + getElementText(dateExpire) + " - " + e.getMessage());
             }
 
