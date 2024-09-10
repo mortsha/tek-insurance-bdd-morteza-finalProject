@@ -1,6 +1,5 @@
 @Smoke @Regression
 Feature: Create new Account with Valid data
-
   Background: Navigate to primary account holder page and fill up the form
     When user click on "Create Primary Account" link
     Then validate "Create Primary Account Holder" title
@@ -14,15 +13,12 @@ Feature: Create new Account with Valid data
       | MaritalStatus    | Single     |
       | DateOfBirth      | 10/10/2000 |
 
-
-  @UserStory2
   Scenario: Navigate to primary account holder page and fill up the form
     Then user click on "Create Account" button
     Then validate "Sign up your account" title
     Then validate email shows as expected in sign up page
 
 
-  @UserStory5
   Scenario: Navigate to primary account holder and create a valid account
     Then user click on "Create Account" button
     And validate "Sign up your account" title
@@ -41,7 +37,6 @@ Feature: Create new Account with Valid data
     Then validate full name displayed at Profile Section
 
 
-  @UserStory6
   Scenario: Navigate to primary account holder and create a valid account
     Then user click on "Create Account" button
     And validate "Sign up your account" title
@@ -56,4 +51,3 @@ Feature: Create new Account with Valid data
     And  user enter "Anything@123" on field "Password"
     Then user click on "Sign In" button
     Then validate "Primary Account Portal" account title
-

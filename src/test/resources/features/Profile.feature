@@ -1,11 +1,10 @@
-@Smoke @Regression @Profile
+@Smoke @Regression
 Feature: Login with credentials and validate profile page
 
   Background: Navigate to login page
     When user click on "Login" link
     Then validate "Sign in to your Account" title
 
-  @Profile2
   Scenario Outline:  Login with Both CSR And Primary Account and validate profile sections
     When  user enter "<username>" on field "Username"
     And  user enter "<password>" on field "Password"

@@ -14,7 +14,10 @@ import org.junit.runner.RunWith;
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         plugin = {
                 "pretty",
-                "html:target/cucumber_report/index.html"
+                "summary",
+                "html:target/cucumber_report/index.html",
+                "json:target/cucumber-report",
+               "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         }
 )
 

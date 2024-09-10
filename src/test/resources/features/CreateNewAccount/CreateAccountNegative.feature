@@ -5,7 +5,6 @@ Feature: Create new Account with Invalid data
     When user click on "Create Primary Account" link
     Then validate "Create Primary Account Holder" title
 
-  @UserStory3
   Scenario: Creating account with existing email and error message
     When user fill the create new account form
       | EmailAddress     | Steve7274@happy.ca |
@@ -20,7 +19,6 @@ Feature: Create new Account with Invalid data
     Then validate error message as expected for email "Steve7274@happy.ca"
 
 
-  @UserStory4
   Scenario: Creating account with age less than 18 and validate error message
     When user fill the create new account form
       | EmailAddress     | Steve7274@happy.ca |
