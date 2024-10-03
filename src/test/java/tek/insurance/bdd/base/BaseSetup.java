@@ -27,12 +27,11 @@ public class BaseSetup {
     }
 
     public BaseSetup() {
-
+        String configFile = getEnvConfig();
         try {
 
-            String configFilePath = System.getProperty("user.dir") + "/src/test/resources/configs/dev-config.properties";
-            LOGGER.debug("Reading config file {}" , configFilePath);
-            FileInputStream inputStream = new FileInputStream(configFilePath);
+            LOGGER.debug("Reading config file {}" , configFile);
+            FileInputStream inputStream = new FileInputStream(configFile);
             properties = new Properties();
             properties.load(inputStream);
         } catch (IOException e) {
@@ -41,6 +40,12 @@ public class BaseSetup {
         }
 
 
+    }
+    private String getEnvConfig() {
+        String configFile = System.getProperty("user.dir") + "/src/test/resources/configs/{env}-config.properties";
+        String env = System.getProperty("env");
+        if (env == null) return configFile.replace("{env}", "dev");
+        return configFile.replace("{env}", env);
     }
 
     public void setupBrowser() {
