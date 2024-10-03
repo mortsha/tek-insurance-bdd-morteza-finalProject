@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
                 "pretty",
                 "summary",
                 "html:target/cucumber_report/index.html",
-                "json:target/cucumber-report"
+                "json:target/jsonReports/report.json"
         }
 )
 
