@@ -31,7 +31,7 @@ Feature: Login with credentials and validate profile page
       Then validate "Customer Service Portal" account title
       When user click on "Profile" button
       When user click on "Logout" button
-      Then home page title should be "Tek Insurance UI"
+      Then home page title should be "TEK Insurance UI"
       And the "Create Primary Account" link is displayed
       And the "Login" link is displayed
 

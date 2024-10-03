@@ -15,6 +15,7 @@ public class CreateNewAccountPage {
     public static final By DATE_OF_BIRTH_INPUT = By.id("dateOfBirth");
 
     public static final By ERROR_MESSAGE = By.className("chakra-alert");
+//    public static final By ERROR_MESSAGE = By.xpath("//div[starts-with(@class,'chakra-alert')]//child::div");
 
 
 }

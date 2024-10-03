@@ -16,8 +16,7 @@ import org.junit.runner.RunWith;
                 "pretty",
                 "summary",
                 "html:target/cucumber_report/index.html",
-                "json:target/cucumber-report",
-               "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+                "json:target/cucumber-report"
         }
 )
 

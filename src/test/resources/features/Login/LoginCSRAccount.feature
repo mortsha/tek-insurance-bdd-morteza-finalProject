@@ -26,6 +26,3 @@ Feature: Login feature with positive and negative test
       | Username      | Password      | ErrorMessage                 |
       | wrongUsername | NoPassword    | User wrongUsername not found |
       | supervisor    | wrongPassword | Password not matched         |
-
-
-
